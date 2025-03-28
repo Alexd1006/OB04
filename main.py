@@ -11,8 +11,11 @@ class Sword(Weapon):
 
 class Bow(Weapon):
     def attack(self):
-        return "Боец выбирает меч.\nБоец наносит удар мечом."
+        return "Боец выбирает лук.\nБоец стреляет из лука."
 
+class Crossbow(Weapon):
+    def attack(self):
+        return "Боец выбирает арбалет.\nБоец стреляет из арбалета."
 
 class Fighter():
     def __init__(self,name,weapon: Weapon):
@@ -43,6 +46,6 @@ monster = Monster(150)
 print(fighter.attack())
 print(monster.take_damage())
 
-fighter.change_weapon(Bow())
+fighter.change_weapon(Crossbow())
 print(fighter.attack())
 print(monster.take_damage())
